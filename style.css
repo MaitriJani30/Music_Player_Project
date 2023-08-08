@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 body{
-    background-color: pink;
+    background-color: black;
 }
 
 *{
@@ -125,4 +125,27 @@ a{
     color:antiquewhite;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
+}
+
+
+
+
+/*  library  */
+
+
+.albumItemContainer{
+    margin-top: 74px;
+}
+
+
+.albumItem a{
+    height: 50px;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    color: black;
+    margin: 12px 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 34px;
 }
