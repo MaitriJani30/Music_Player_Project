@@ -16,6 +16,8 @@ body{
 
 nav{
     font-family: 'Ubuntu', sans-serif;
+       position: sticky;
+    top: 0;
 }
 
 nav ul{
@@ -23,7 +25,7 @@ nav ul{
     align-items: center;
     list-style-type: none;
     height: 65px;
-    background-color: black;
+    background-color: var(--black);
     color: white;
 }
 
@@ -38,7 +40,7 @@ li{
  content: "";
  position: absolute;
  width: 62%;
- border: 1px solid white;
+ border: 1px solid var(--white);
  bottom: -6px;
  left: 18%;
  background-color: var(--white);
@@ -57,7 +59,7 @@ li{
 
 .container{
     min-height: 72vh;
-    background-color: black;
+    background-color: var(--black);
     color: white;
    font-family: 'Varela Round', sans-serif;
    display: flex;
@@ -100,7 +102,6 @@ li{
     height: 50px;
     display: flex;
     background-color: var(--white);
-    
     color: black;
     margin: 12px 0;
     justify-content: space-between;
