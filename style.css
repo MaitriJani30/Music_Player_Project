@@ -25,6 +25,18 @@ nav ul{
 nav ul li{
     padding: 0 12px;
 }
+li{
+    position: relative;
+}
+.active::after{
+ content: "";
+ position: absolute;
+ width: 62%;
+ border: 1px solid white;
+ bottom: -6px;
+ left: 18%;
+ background-color: var(--white);
+}
 .brand img{
     width: 44px;
     padding: 0 8px;
