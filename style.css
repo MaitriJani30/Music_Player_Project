@@ -28,6 +28,9 @@ nav ul li{
 li{
     position: relative;
 }
+a{
+    text-decoration: none;
+}
 .active::after{
  content: "";
  position: absolute;
@@ -151,6 +154,7 @@ a{
 
 
 .albumItem a{
+    
     height: 50px;
     display: flex;
     background-color: white;
