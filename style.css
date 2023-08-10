@@ -170,3 +170,24 @@ a{
     align-items: center;
     border-radius: 34px;
 }
+
+
+
+  /*  library */
+
+.songItem{
+
+    text-align:start;
+}
+.songItem a{
+    color: black;
+}
+.common-songItemContainer{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+.songItemContainer{
+    margin-right: 74px;
+}
