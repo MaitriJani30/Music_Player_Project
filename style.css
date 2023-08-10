@@ -175,18 +175,12 @@ a{
 
   /*  library */
 
-.songItem{
-
-    text-align:start;
-}
 .songItem a{
-    color: black;
+    color: var(--black);
 }
 .common-songItemContainer{
     display: flex;
     flex-direction: row;
-
-    justify-content: center;
 }
 .songItemContainer{
     margin-right: 74px;
