@@ -234,7 +234,7 @@ hr{
     align-items: flex-start;
     justify-content: center;
     padding: 7px 23px;
-    margin-top: 15px;
+    margin: 15px 0;
     color: var(--white);
     font-weight: 600;
     cursor: pointer;
