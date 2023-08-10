@@ -135,9 +135,6 @@ li{
     transition: opacity 0.4s ease-in;
 }
 
-@media only screen and (max-width: 1100px) {
-    
-  }
 
 a{
     color: var(--white);
@@ -184,3 +181,14 @@ a{
 .songItemContainer{
     margin-right: 74px;
 }
+
+
+/* media Query  */
+
+
+@media only screen and (max-width: 600px) {
+    .common-songItemContainer{
+        display: flex;
+        flex-direction: column;
+    }
+  }
