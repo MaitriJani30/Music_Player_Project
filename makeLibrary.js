@@ -12,11 +12,11 @@ window.onload = () => {
 
  
    
-    function showData(){
-        items.innerHTML =  localStorage.getItem("data");
-    }
+    // function showData(){
+    //     items.innerHTML =  localStorage.getItem("data");
+    // }
     
-    showData();
+    // showData();
 };
 
 function addItem(e) {
@@ -74,7 +74,7 @@ function addItem(e) {
 
 	items.appendChild(li);
 
-    saveData();
+    // saveData();
 }
 
 function removeItem(e) {
@@ -101,7 +101,7 @@ function removeItem(e) {
 	// 	submit.value = "EDIT";
 	// 	editItem = e;
 	// }
-    saveData();
+    // saveData();
 }
 
 function toggleButton(ref, btnID) {
@@ -114,6 +114,6 @@ function toggleButton(ref, btnID) {
 
 //  saving data
 
-function saveData(){
-    localStorage.setItem("data" , items.innerHTML);
-}
+// function saveData(){
+//     localStorage.setItem("data" , items.innerHTML);
+// }
