@@ -29,6 +29,7 @@ body{
       border-bottom-right-radius: 0px;
 }
 .row #submit{
+    padding-top: 9px;
     color: var(--white);
     background-color: #7c8184;
     font-size: 14px;
