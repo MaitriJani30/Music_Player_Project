@@ -1,75 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-:root{
-    --white : white;
-    --black : black;
-    --silver :  rgb(27, 27, 27);
-}
-body{
-    background-color: var(--black);
-}
-.row{
-    /* background-color: aliceblue; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 30px;
-}
-.row input{
 
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-}
-.row #item{
-    padding-right: 450px;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-}
-.row #submit{
-    color: var(--white);
-    background-color: #7c8184;
-    font-size: 14px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
-ul{
-    list-style-type: none;
-}
-#addForm{
-    position: relative;
-}
-#addForm ul{
-    position: absolute;
-    top: 25%;
-    right:0%;
-}
-#addForm ul li{
- padding: 0px 10px 30px 0px;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content:space-around;
-}
+window.onload = () => {
+	const form1 = document.querySelector("#addForm");
 
-.btn-danger{
-background-color:red;
-border: none;
-outline: none;
-margin-left: 20px;
-}
-.btn-danger:hover{
-    background-color:#d9534f;
-}
+	let items = document.getElementById("items");
+	let submit = document.getElementById("submit");
 
-.edit{
-    background-color:#5cb85c;
-    border: none;
-    outline: none;
-}
-.edit:hover{
-    background-color:#5cb85c;
-}
+	let editItem = null;
+
+	form1.addEventListener("submit", addItem);
+	items.addEventListener("click", removeItem);
+
  
+   
+    function showData(){
+        items.innerHTML =  localStorage.getItem("data");
+    }
+    
+    showData();
+};
+
+function addItem(e) {
+	e.preventDefault();
+
+	if (submit.value != "Submit") {
+		console.log("Hello");
+
+		editItem.target.parentNode.childNodes[0].data
+			= document.getElementById("item").value;
+
+		submit.value = "Submit";
+		document.getElementById("item").value = "";
+
+		document.getElementById("lblsuccess").style.display
+			= alert("Text edited successfully");
+
+		document.getElementById("lblsuccess")
+						.style.display = "block";
+
+		setTimeout(function() {
+			document.getElementById("lblsuccess")
+							.style.display = "none";
+		}, 2000);
+
+		return false;
+	}
+
+	let newItem = document.getElementById("item").value;
+	if (newItem.trim() == "" || newItem.trim() == null)
+		return false;
+	else
+		document.getElementById("item").value = "";
+
+	let li = document.createElement("li");
+	li.className = "list-group-item";
+
+	let deleteButton = document.createElement("button");
+
+	deleteButton.className =
+		"btn-danger btn btn-sm float-right delete";
+
+	deleteButton.appendChild(document.createTextNode("Delete"));
+
+	let editButton = document.createElement("button");
+
+	editButton.className =
+			"btn-success btn btn-sm float-right edit";
+
+	editButton.appendChild(document.createTextNode("Edit"));
+
+	li.appendChild(document.createTextNode(newItem));
+	li.appendChild(deleteButton);
+	li.appendChild(editButton);
+
+	items.appendChild(li);
+
+    saveData();
+}
+
+function removeItem(e) {
+	e.preventDefault();
+	if (e.target.classList.contains("delete")) {
+		if (confirm("Are you Sure?")) {
+			let li = e.target.parentNode;
+			items.removeChild(li);
+			document.getElementById("lblsuccess").style.display
+				= alert("deleted");
+
+			document.getElementById("lblsuccess")
+						.style.display = "block";
+
+			setTimeout(function() {
+				document.getElementById("lblsuccess")
+						.style.display = "none";
+			}, 1000);
+		}
+	}
+	// if (e.target.classList.contains("edit")) {
+	// 	document.getElementById("item").value =
+	// 		e.target.parentNode.childNodes[0].data;
+	// 	submit.value = "EDIT";
+	// 	editItem = e;
+	// }
+    saveData();
+}
+
+function toggleButton(ref, btnID) {
+	document.getElementById(btnID).disabled = false;
+	document.getElementById(btnID).style.backgroundColor = "#7c8184";
+}
+
+
+
+
+//  saving data
+
+function saveData(){
+    localStorage.setItem("data" , items.innerHTML);
+}
