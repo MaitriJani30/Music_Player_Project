@@ -13,7 +13,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 20px 10px;
+    padding: 20px 30px;
 }
 .row input{
     
@@ -59,12 +59,16 @@ background-color:red;
 border: none;
 outline: none;
 margin-left: 20px;
+     padding: 10px 25px;
+      border-radius: 8px;
 }
 .btn-danger:hover{
     background-color:#d9534f;
 }
 
 .edit{
+     padding: 10px 25px;
+      border-radius: 8px;
     background-color:#5cb85c;
     border: none;
     outline: none;
