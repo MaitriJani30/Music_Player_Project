@@ -6,16 +6,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rhythm Beats - Your favourite music is here</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="api.css">
+
         </head>
 <body>
     <nav>
         <ul>
-            <li class="brand"><img src="logo2.png" alt="Rhythm Beats"> Rhythm Beats</li>
-            <li><a href="index.html"  class="active"> Home </a></li>
-            <li><a href="library.html">Library</a></li>
-            <li><a href="makeLibrary.html">your library</a></li>
+            <li class="brand-out brand"><img src="logo2.png" alt="Rhythm Beats"> Rhythm Beats</li>
+
+            <div class="sidenav" id="mySidenav">
+
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <li class="brand brand-in"><img src="logo2.png" alt="Rhythm Beats"> Rhythm Beats</li>
+                <li><a href="index.html"  class="active"> Home </a></li>
+                <li><a href="library.html">Library</a></li>
+                <li><a href="makeLibrary.html">yourLibrary</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signin.html">Sign up</a></li>
+                
+                <li id="api_nav"> 
+                    
+                    <input type="text" id="searchTerm">
+                    <button id="searchTermBtn">Search</button>
+                    
+                 </li>
+                
+                <main id="songs"></main>
+                <script src="api.js"></script>
+            </div>
         </ul>
+        <span onclick="openNav()" class="open" id="open">&#9776;</span>
     </nav>
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "45%";
+          document.getElementById("open").style.display ="none"
+
+        }
+     
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("open").style.display ="block"
+
+
+        }
+        
+        </script>
+           
+
 
     <div class="container">
         <div class="songList">
@@ -71,6 +110,8 @@
                     <span class="songName">Let me Love You</span>
                     <span class="songlistplay"><span class="timestamp">04:36 <i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
+
+                
             </div>
         </div>
         <div class="songBanner"></div>
