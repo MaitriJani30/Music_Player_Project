@@ -16,17 +16,19 @@ body{
 
 nav{
     font-family: 'Ubuntu', sans-serif;
-       position: sticky;
+    position: sticky;
     top: 0;
+
 }
 
-nav ul{
+nav ul div{
     display: flex;
     align-items: center;
     list-style-type: none;
     height: 65px;
     background-color: var(--black);
     color: white;
+    width: 100%;
 }
 
 nav ul li{
@@ -34,6 +36,12 @@ nav ul li{
 }
 li{
     position: relative;
+}
+a{
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
 }
 
 .active::after{
@@ -70,17 +78,7 @@ li{
    background-image: url('bg2.jpg');
 }
 
-.bottom{
-    position: sticky;
-    bottom: 0;
-    height: 130px;
-    background-color:var(--black);
-    color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-}
+
 
 .icons{
     margin-top: 14px; 
@@ -89,10 +87,7 @@ li{
     cursor: pointer;
 }
 
-#myProgressBar{
-    width: 80vw; 
-    cursor: pointer;
-}
+
 
 .songItemContainer{
     margin-top: 74px;
@@ -123,7 +118,21 @@ li{
 .timestamp i{
     cursor: pointer;
 }
+.songItem a{
+    color: var(--black);
+}
 
+.bottom{
+    position: sticky;
+    bottom: 0;
+    height: 130px;
+    background-color:var(--black);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
 .songInfo{
     position: absolute;
     left: 10vw;
@@ -134,14 +143,12 @@ li{
     opacity: 0;
     transition: opacity 0.4s ease-in;
 }
-
-
-a{
-    color: var(--white);
-      text-decoration: none;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
+#myProgressBar{
+    width: 80vw; 
+    cursor: pointer;
 }
+
+
 
 
 
@@ -171,13 +178,11 @@ a{
 
   /*  library */
 
-.songItem a{
-    color: var(--black);
-}
-.common-songItemContainer{
+
+/* .common-songItemContainer{
     display: flex;
     flex-direction: row;
-}
+} */
 .songItemContainer{
     margin-right: 74px;
 }
@@ -189,6 +194,14 @@ a{
     width: 100%;
     color: var(--white);
     height: 86vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container2 {
+    width: 100%;
+    color: var(--white);
+    height: 110vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -213,7 +226,7 @@ hr{
 
 .form-text input {
     margin: 15px 0;
-    padding: 10px 0;
+    padding: 13px 75px 13px 0;
     border: 1px solid var(--white);
     background-color: var(--silver);
     border-radius: 5px;
@@ -223,6 +236,7 @@ hr{
 ::-webkit-input-placeholder {
     color: var(--white);
     padding-left: 20px;
+    
 }
 
 /* ......button....... */
@@ -246,9 +260,95 @@ hr{
 /* media Query  */
 
 
-@media only screen and (max-width: 600px) {
+
+
+  .closebtn{
+      display: none;
+    }
+    .brand-out{
+        display: none;
+    }
+
+@media screen and (max-width: 600px) {
     .common-songItemContainer{
         display: flex;
         flex-direction: column;
     }
-  }
+    nav{
+        margin-bottom: 35px;
+        background-color: black;
+    }
+    nav ul{
+        height: 75px;
+    }
+    
+    .brand-in{
+        display: none;
+    }
+      .brand-out{
+    display: block;
+    position: fixed;
+    top: 5%;
+    left: 10%;
+}
+
+
+.brand-out{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    color: #f1f1f1;
+}
+
+.open{
+    font-size:20px;
+    cursor:pointer;
+    color:var(--white);
+    position: fixed;
+    top: 5%;
+    right: 20%;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 0 5px;
+}
+.sidenav {
+height: 50%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+right: 0;
+background-color: #111;
+overflow-y: hidden;
+transition: 0.5s;
+padding-top: 60px;
+text-align:center;
+display: block;
+
+}
+
+.sidenav a {
+padding: 18px 8px 8px 32px;
+font-size: 18px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover{
+color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+position: absolute;
+/* top: 0;
+right: 25px; */
+font-size: 36px;
+margin-left: 50px;
+display: block;
+top: 0%;
+right: 20%;
+}
+
+} 
