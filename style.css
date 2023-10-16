@@ -207,8 +207,8 @@ a{
     justify-content: center;
 }
 .form-box {
-    box-shadow: 0px 0px 20px var(--white);
-    padding: 75px 95px;
+    box-shadow: 0px 0px 17px var(--white);
+    padding: 75px 65px;
 }
 
 .form-box label {
@@ -240,6 +240,9 @@ hr{
 }
 
 /* ......button....... */
+input{
+    color: var(--white);
+}
 .form-text button {
     /* background-color: var(--silver); */
     background-color: green;
