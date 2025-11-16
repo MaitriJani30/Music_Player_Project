@@ -1,4 +1,4 @@
-console.log("Welcome to Spotify");
+console.log("Welcome to Rhythm beats!");
 
 // Initialize the Variables
 let songIndex = 0;
@@ -19,7 +19,7 @@ let songs = [
     {songName: "Stars Dance - Selena Gomez", filePath: "songs/7.mp3", coverPath: "covers/7.jpg"},
     {songName: "Bolo Har Har - Baadshah", filePath: "songs/8.mp3", coverPath: "covers/8.jpg"},
     {songName: "Spectre - Alan Walker", filePath: "songs/9.mp3", coverPath: "covers/9.jpg"},
-    {songName: "Levitating - Dua Lipa", filePath: "songs/11.mp3", coverPath: "covers/11.jpg"},
+    {songName: "Levitating - Dua Lipa", filePath: "songs/11.mp3", coverPath: "covers/1.jpg"},
 ]
 
 songItems.forEach((element, i)=>{ 
